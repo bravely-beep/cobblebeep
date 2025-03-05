@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "cobblebeep",
+  "version": "${version}",
+  "name": "beep's Cobblemon Extensions",
+  "description": "Engine extensions to Cobblemon",
+  "authors": [
+    "bravely_beep"
+  ],
+  "license": "MIT License",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.bravelybeep.cobblebeep.CobbleBeep"
+      }
+    ]
+  },
+  "mixins": [
+    "cobblebeep.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "1.21.1",
+    "fabric-language-kotlin": ">=1.12.3+kotlin.2.0.21",
+    "cobblemon": ">=1.6.0"
+  }
+}

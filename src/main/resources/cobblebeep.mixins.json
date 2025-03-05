@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.bravelybeep.cobblebeep.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MobMixin",
+    "PokemonEntityMixin",
+    "PokemonPropertiesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
