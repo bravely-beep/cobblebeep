@@ -1,4 +1,4 @@
-package mixinaccess;
+package com.bravelybeep.cobblebeep.mixinaccess;
 
 import com.bravelybeep.cobblebeep.entity.BeepPokemonEntity;
 import com.bravelybeep.cobblebeep.PokeSpawnerData;

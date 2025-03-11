@@ -1,7 +1,7 @@
 package com.bravelybeep.cobblebeep.mixin;
 
 import com.bravelybeep.cobblebeep.PokeSpawnerData;
-import mixinaccess.PokemonEntityMixinAccess;
+import com.bravelybeep.cobblebeep.mixinaccess.PokemonEntityMixinAccess;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
