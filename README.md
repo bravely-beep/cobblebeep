@@ -1,8 +1,23 @@
-# Fabric-Kotlin MDK
+# beep's Cobblemon Extensions
 
-This is an example of using Cobblemon with Fabric and Kotlin. This mirrors the logic in the Java version of the MDK.
+Extensions to Cobblemon by bravely_beep.
 
-## Notice when writing mixins
+## Documentation
 
-When writing mixins, you should write these in Java and not in Kotlin due to a lack of support for Kotlin.
-More information about this can be read on this [Sponge Issue](https://github.com/SpongePowered/Mixin/issues/245)
+Added Pokémon properties for use with `/pokespawn` and spawn detail config files :
+
+### Respawn
+
+- `respawn_time` allows wild Pokémon knocked out in battle to respawn after a timer.
+- `respawn_radius_horizontal` and `respawn_radius_vertical` control the area the respawn can happen in.
+- `respawn_deny_caught_species` will prevent a respawn triggering if the nearest player has
+  already registered the Pokémon's species as caught in the Pokédex.
+  - `respawn_deny_caught_form` will only check if the specific form was registered as caught. 
+
+### Misc
+
+- `hide_label` hides wild Pokémon overhead labels.
+- `invulnerable` makes wild Pokémon invulnerable.
+- `persistence_required` prevents wild Pokémon despawning.
+- `unbattleable` prevents wild Pokémon from being battled.
+
