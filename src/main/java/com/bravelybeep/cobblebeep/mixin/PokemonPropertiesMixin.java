@@ -19,8 +19,7 @@ public abstract class PokemonPropertiesMixin {
 
     @Inject(
         method = "createEntity(Lnet/minecraft/world/level/Level;Lnet/minecraft/server/level/ServerPlayer;)Lcom/cobblemon/mod/common/entity/pokemon/PokemonEntity;",
-        at = @At("RETURN"),
-        remap = false
+        at = @At("RETURN")
     )
     void injectCreateEntity(Level world, @Nullable ServerPlayer player, CallbackInfoReturnable<PokemonEntity> cir) {
         var pokemonEntity = (BeepPokemonEntity)cir.getReturnValue();
