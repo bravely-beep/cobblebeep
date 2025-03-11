@@ -1,7 +1,6 @@
 package com.bravelybeep.cobblebeep.mixin;
 
 import com.bravelybeep.cobblebeep.entity.BeepPokemonEntity;
-import com.bravelybeep.cobblebeep.entity.PokeSpawnerData;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PokemonProperties.class)
 public abstract class PokemonPropertiesMixin {
-    @Shadow
+    @Shadow(remap = false)
     public abstract PokemonProperties copy();
 
     @Inject(
@@ -23,7 +22,7 @@ public abstract class PokemonPropertiesMixin {
         at = @At("RETURN"),
         remap = false
     )
-    public void injectCreateEntity(Level world, @Nullable ServerPlayer player, CallbackInfoReturnable<PokemonEntity> cir) {
+    void injectCreateEntity(Level world, @Nullable ServerPlayer player, CallbackInfoReturnable<PokemonEntity> cir) {
         var pokemonEntity = (BeepPokemonEntity)cir.getReturnValue();
         if (pokemonEntity.getRespawnData().getTimer() >= 0)
             pokemonEntity.getRespawnData().setProperties(this.copy());

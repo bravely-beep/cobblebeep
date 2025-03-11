@@ -3,6 +3,7 @@
   "package": "com.bravelybeep.cobblebeep.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CobblemonMixin",
     "MobMixin",
     "PokemonEntityMixin",
     "PokemonPropertiesMixin"

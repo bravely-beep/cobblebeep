@@ -1,7 +1,7 @@
-package com.bravelybeep.cobblebeep.mixinaccess;
+package mixinaccess;
 
 import com.bravelybeep.cobblebeep.entity.BeepPokemonEntity;
-import com.bravelybeep.cobblebeep.entity.PokeSpawnerData;
+import com.bravelybeep.cobblebeep.PokeSpawnerData;
 import org.jetbrains.annotations.NotNull;
 
 public interface PokemonEntityMixinAccess extends BeepPokemonEntity {

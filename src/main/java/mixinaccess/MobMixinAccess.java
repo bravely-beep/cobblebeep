@@ -1,4 +1,4 @@
-package com.bravelybeep.cobblebeep.mixinaccess;
+package mixinaccess;
 
 import com.bravelybeep.cobblebeep.entity.BeepMob;
 

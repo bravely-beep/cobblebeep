@@ -14,6 +14,8 @@ object ModEntityTypes {
     @JvmField
     val POKE_SPAWNER: EntityType<PokeSpawner> = EntityType.Builder
         .of({ _, level -> PokeSpawner(level) }, MobCategory.MISC)
+        .sized(0.0F, 0.0F)
+        .clientTrackingRange(0)
         .build(POKE_SPAWNER_KEY.toString())
 
     fun register() {

@@ -21,15 +21,21 @@ repositories {
     mavenCentral()
     maven(url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
     maven("https://maven.impactdev.net/repository/development/")
+    maven("https://maven.parchmentmc.org")
 }
 
 dependencies {
     minecraft("net.minecraft:minecraft:1.21.1")
-    mappings(loom.officialMojangMappings())
+//    mappings(loom.officialMojangMappings())
+    mappings(loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.20.2:2023.10.08@zip")
+    })
     modImplementation("net.fabricmc:fabric-loader:0.16.5")
 
     modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:0.104.0+1.21.1")
     modImplementation(fabricApi.module("fabric-command-api-v2", "0.104.0+1.21.1"))
+    modImplementation(fabricApi.module("fabric-lifecycle-events-v1", "0.104.0+1.21.1"))
 
     modImplementation("net.fabricmc:fabric-language-kotlin:1.12.3+kotlin.2.0.21")
     modImplementation("com.cobblemon:fabric:1.6.0+1.21.1-SNAPSHOT")

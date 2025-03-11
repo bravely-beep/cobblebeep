@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.pokemon.properties.IntProperty
 
 object RespawnRadiusHorizontalProperty : CustomPokemonPropertyType<IntProperty> {
-    override val keys = setOf("respawn_radius_horizontal", "respawn_radius_h")
+    override val keys = setOf("respawn_radius_horizontal")
     override val needsKey = true
 
     override fun fromString(value: String?) = when (value) {

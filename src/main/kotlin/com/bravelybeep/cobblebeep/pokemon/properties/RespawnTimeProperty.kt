@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.pokemon.properties.IntProperty
 
 object RespawnTimeProperty : CustomPokemonPropertyType<IntProperty> {
-    override val keys = setOf("respawn_time", "respawn")
+    override val keys = setOf("respawn_time")
     override val needsKey = true
 
     override fun fromString(value: String?) = when (value) {

@@ -1,4 +1,4 @@
-package com.bravelybeep.cobblebeep.entity
+package com.bravelybeep.cobblebeep
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.mojang.serialization.Codec
@@ -16,12 +16,12 @@ class PokeSpawnerData(
         @JvmField
         val CODEC: Codec<PokeSpawnerData> = RecordCodecBuilder.create {
             it.group(
-                PokemonProperties.CODEC.fieldOf("Properties").forGetter(PokeSpawnerData::properties),
-                Codec.INT.fieldOf("Timer").forGetter(PokeSpawnerData::timer),
-                Codec.INT.fieldOf("RadiusHorizontal").forGetter(PokeSpawnerData::radiusHorizontal),
-                Codec.INT.fieldOf("RadiusVertical").forGetter(PokeSpawnerData::radiusVertical),
-                Codec.BOOL.fieldOf("DenyCaughtSpecies").forGetter(PokeSpawnerData::denyCaughtSpecies),
-                Codec.BOOL.fieldOf("DenyCaughtForm").forGetter(PokeSpawnerData::denyCaughtForm),
+                PokemonProperties.CODEC.optionalFieldOf("Properties", null).forGetter(PokeSpawnerData::properties),
+                Codec.INT.optionalFieldOf("Timer", -1).forGetter(PokeSpawnerData::timer),
+                Codec.INT.optionalFieldOf("RadiusHorizontal", 0).forGetter(PokeSpawnerData::radiusHorizontal),
+                Codec.INT.optionalFieldOf("RadiusVertical", 0).forGetter(PokeSpawnerData::radiusVertical),
+                Codec.BOOL.optionalFieldOf("DenyCaughtSpecies", false).forGetter(PokeSpawnerData::denyCaughtSpecies),
+                Codec.BOOL.optionalFieldOf("DenyCaughtForm", false).forGetter(PokeSpawnerData::denyCaughtForm),
             ).apply(it, ::PokeSpawnerData)
         }
     }
