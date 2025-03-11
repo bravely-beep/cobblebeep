@@ -47,8 +47,8 @@ class PokeSpawner(level: Level) : Marker(ModEntityTypes.POKE_SPAWNER, level) {
         val form = pokemonEntity.pokemon.form.name;
         val isCaughtSpecies = pokedex.getHighestKnowledgeForSpecies(species) == CAUGHT;
         val isCaughtForm = pokedex.getSpeciesRecord(species)?.getFormRecord(form)?.knowledge == CAUGHT;
-        if (data.denyCaughtSpecies && !isCaughtSpecies) return true
-        if (data.denyCaughtForm && !isCaughtForm) return true
+        if (data.denyCaughtSpecies && isCaughtSpecies) return true
+        if (data.denyCaughtForm && isCaughtForm) return true
 
         // Apply random offset
         val offsetH = (pokemonEntity.random.nextDouble() * 2 - 1) * data.radiusHorizontal;
